@@ -1,0 +1,1 @@
+[{"model": "app.codereference", "pk": 100, "fields": {"status_description": "Orderplaced"}}, {"model": "app.codereference", "pk": 200, "fields": {"status_description": "Dispatched"}}, {"model": "app.codereference", "pk": 300, "fields": {"status_description": "Delivered"}}, {"model": "app.codereference", "pk": 400, "fields": {"status_description": "Cancelled"}}]
