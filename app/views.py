@@ -28,13 +28,13 @@ class OrderCustomerSerializer(serializers.ModelSerializer):
 class ViewOders(generics.ListAPIView):
 	serializer_class = OrderCustomerSerializer
 	queryset = models.Customer.objects.all()
-		
+
 class StatusCode(APIView):
     def get(self, *arg, **kwargs):
         response = requests.get('http://197.97.154.196/live/logic/courier_demo')
         p = re.compile(r'<.*?>')
-        update_codes = [[x.lstrip().split('\n')[0], int(x.lstrip().split('\n')[1].lstrip())] 
-        for x in p.sub('', response.text).split('\n    \n') 
+        update_codes = [[x.lstrip().split('\n')[0], int(x.lstrip().split('\n')[1].lstrip())]
+        for x in p.sub('', response.text).split('\n    \n')
         if x not in ('\n', '')]
 
         for customer in update_codes:
